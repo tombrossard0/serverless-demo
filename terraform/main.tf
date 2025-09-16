@@ -55,9 +55,8 @@ resource "aws_dynamodb_table" "contacts" {
   }
 
   lifecycle {
-    prevent_destroy = true
     ignore_changes  = [
-      deletion_protection_disable,
+      deletion_protection_enabled,
       ttl,
       tags
     ]
